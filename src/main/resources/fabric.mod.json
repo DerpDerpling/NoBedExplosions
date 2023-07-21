@@ -2,10 +2,10 @@
 	"schemaVersion": 1,
 	"id": "nobedexplosions",
 	"version": "${version}",
-	"name": "NoBedExplosions",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "No Bed Explosions",
+	"description": "Prevents beds from exploding!",
 	"authors": [
-		"Me!"
+		"DerpDerpling"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"derp.nbe.ExampleMod"
+			"derp.nbe.NBE"
 		]
 	},
 	"mixins": [
@@ -24,11 +24,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
+		"minecraft": ">=1.20-",
+		"java": ">=17"
 	}
 }
