@@ -1,5 +1,7 @@
 package derp.nbe.mixin;
 
+import derp.nbe.NBE;
+import derp.nbe.config.ModConfig;
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -39,7 +41,7 @@ public class BedMixin extends Block {
 					world.removeBlock(blockPos, false);
 				}
 			}
-			cir.setReturnValue(ActionResult.SUCCESS);
+			if (NBE.config.enabled) cir.setReturnValue(ActionResult.SUCCESS);
 			player.sendMessage(Text.translatable("sleep.not_possible"), true);
 		} else if (state.get(BedBlock.OCCUPIED)) {
 			if (!this.wakeVillager(world, pos)) {

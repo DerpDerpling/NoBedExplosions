@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"derp.nbe.NBE"
+		],
+		"modmenu": [
+			"derp.nbe.config.ModMenuImpl"
 		]
 	},
 	"mixins": [
@@ -25,6 +28,7 @@
 	"depends": {
 		"fabricloader": ">=0.14.21",
 		"minecraft": ">=1.20-",
-		"java": ">=17"
+		"java": ">=17",
+		"cloth-config": "*"
 	}
 }
