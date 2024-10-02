@@ -61,12 +61,18 @@ public abstract class BedMixin extends Block {
 							player.sendMessage(Text.translatable("block.minecraft.bed.occupied"), true);
 						}
 					} else {
-						player.trySleep(pos).ifLeft((reason) -> {
-							if (reason.getMessage() != null) {
-								player.sendMessage(reason.getMessage(), true);
+						{
+							if (state.get(BedBlock.PART) != BedPart.FOOT) {
+								state = world.getBlockState(pos);
+								if (!state.isOf(this)) {
+									cir.setReturnValue(ActionResult.CONSUME);
+									return;
+								}
+								if (NBE.config.enabled) cir.setReturnValue(ActionResult.SUCCESS);
+								if (NBE.config.enabled)
+									player.sendMessage(Text.translatable("sleep.not_possible"), true);
 							}
-							player.sendMessage(Text.translatable("message.minecraft.bed.only_at_night"), true);
-						});
+						}
 					}
 				}
 			}
